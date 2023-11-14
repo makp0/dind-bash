@@ -12,3 +12,6 @@ RUN apt-get update && \
     # Cleanup
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* get-docker.sh
+
+ENV LC_ALL=en_US.UTF-8 \
+        LANG=en_US.UTF-8
