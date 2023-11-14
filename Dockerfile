@@ -5,5 +5,6 @@ FROM docker:24.0.7-git
 RUN apk update && \
     apk upgrade && \
     apk add bash && \
+    apk add curl && \
     # Cleanup
     rm -rf /var/cache/apk/*
