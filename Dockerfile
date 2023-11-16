@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:latest
+FROM mcr.microsoft.com/dotnet/sdk:7.0
 
 # Install required packages
 RUN apt-get update && \
