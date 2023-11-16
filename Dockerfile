@@ -1,12 +1,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:latest
 
-# Install Docker CLI
+# Install required packages
 RUN apt-get update && \
-    apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common && \
-    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
-    apt-get update && \
-    apt-get install -y docker-ce docker-ce-cli containerd.io git bash python3-pip
+    apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common python3-pip git bash
+
+# Install Docker using the official Docker convenience script
+RUN curl -fsSL https://get.docker.com -o get-docker.sh && \
+    sh get-docker.sh
 
 # Cleanup
 RUN apt-get clean && \
