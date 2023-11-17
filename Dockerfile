@@ -1,8 +1,15 @@
 FROM mcr.microsoft.com/dotnet/sdk:7.0-jammy
 
+# Set non-interactive frontend (useful for Docker builds)
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Set your desired timezone (e.g., "Etc/UTC")
+ENV TZ=Etc/UTC
+
 # Install required packages
 RUN apt-get update && \
-    apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common git bash
+    apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common git bash && \
+    apt-get install -y tzdata
 
 # Add Deadsnakes PPA
 RUN add-apt-repository ppa:deadsnakes/ppa
