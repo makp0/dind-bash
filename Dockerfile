@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0
+FROM 3.11-bookworm
 
 # Install required packages
 RUN apt-get update && \
