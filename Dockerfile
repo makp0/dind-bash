@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0-jammy
+FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy
 
 # Set non-interactive frontend (useful for Docker builds)
 ENV DEBIAN_FRONTEND=noninteractive
